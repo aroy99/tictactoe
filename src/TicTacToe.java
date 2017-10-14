@@ -1,15 +1,15 @@
-
-
 public class TicTacToe{
   //Create an array of all the positons of the board
   int[] board = new int[9];
   
-  public void add(int num, int pos){
+  public boolean add(int num, int pos){
     if(board[pos] == 0){
       board[pos] = num;
+      return true;
     }
     else{
       System.out.println("Space already full at " + pos);
+      return false;
     }
   }
   
