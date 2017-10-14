@@ -50,4 +50,27 @@ public class TicTacToe{
     
     return 0;
   }
+  
+  public boolean isFull() {
+    for(int i = 0; i<board.length; i++) {
+      if(board[i] == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  public String toString() {
+    String returnee = new String();
+    
+    for(int i = 0; i < 3; i++) {
+      for(int j = 0; j < 3; j++) {
+        returnee += board[i];
+      }
+      returnee += "\n";
+    }
+    
+    return returnee;
+  }
+
 }
