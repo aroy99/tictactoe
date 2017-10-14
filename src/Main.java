@@ -8,14 +8,24 @@ public class Main {
     int player1Input, player2Input;
     boolean temp;
     
-    while(board.hasWon() != 0 && !board.isFull()){
+    while(board.hasWon() == 0 && !board.isFull()){
       temp = false;
+      
+      System.out.println(board);
       
       while(temp == false) {
       	System.out.println("What position do you want to place your circle?");
       	player1Input = scan.nextInt();
       	temp = board.add(2, player1Input);
       }
+      
+      System.out.println(board);
+
+      if(board.hasWon() != 0) {
+        break;
+      }
+      
+      temp = false;
       while(temp == false) {
       	System.out.println("What positon do you want to place your x?");
       	player2Input = scan.nextInt();
