@@ -6,11 +6,11 @@ public class TicTacToe{
     if(board[pos] == 0){
       board[pos] = num;
       
-      System.out.println(board[pos]);
+//      System.out.println(board[pos]);
       return true;
     }
     else{
-      System.out.println("Space already full at " + pos);
+//      System.out.println("Space already full at " + pos);
       return false;
     }
   }
@@ -63,12 +63,22 @@ public class TicTacToe{
     return true;
   }
   
+  public TicTacToe copy() {
+    TicTacToe newBoard = new TicTacToe();
+    
+    for(int j = 0; j < board.length; j++) {
+      newBoard.board[j] = board[j];
+    }
+    
+    return newBoard;
+  }
+  
   public String toString() {
     String returnee = new String();
     
     for(int i = 0; i < 3; i++) {
       for(int j = 0; j < 3; j++) {
-        returnee += board[i*3+j];
+        returnee += board[i*3+j] == 0?3*i+j:board[i*3+j] == 1?"X":"O";
       }
       returnee += "\n";
     }
